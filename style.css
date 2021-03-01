@@ -1,0 +1,17 @@
+body { font-family: 'Nanum Gothic', sans-serif; }
+
+a {color : black; text-decoration: none; }
+
+.title { font-size: 25px; font-weight: bold; margin-bottom : 15px; padding-top: 20px; margin-top: 0px; }
+
+#grid{ display: grid; grid-template-columns: 150px 1fr; }
+
+#titles{ border-right: 3px solid black; width: 400px; margin-left: 20px; }
+
+#article{ font-size:20; margin-top:20px; margin-left: 300px; }
+
+@media(max-width: 800px) {
+	#grid{ display: block;}
+	#titles{ border-right: none; }
+	#article{ margin-left: 20px; margin-top: 50px; }
+}
