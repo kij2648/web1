@@ -21,7 +21,7 @@
 
 <body>
 	<div style="background-color: black; color:white; height: 40px; text-align: middle">
-			<h1 style="margin-top:3px; margin-left: 15px; font-size: 30"> Manchester United </h1>
+		<h1 style="margin-top:3px; margin-left: 15px; font-size: 30"> Manchester United </h1>
 	</div>
 
 	<div align="center" style='background-image: url("stadium.jpg"); width: 100%; height: 700px; background-repeat: no-repeat; background-position: center; background-size: cover; margin-bottom: 0px'>
@@ -37,11 +37,11 @@
 		</div>
 
 		<div id="article">
-			Manchester Untied is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed "the Red Devils", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.
+			Manchester United is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed "the Red Devils", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.
 
 			<br><br>
 
-			Manchester United have <a href="trophies.html" style="color:black"><u><b>won more trophies than any other club in English football</b></u></a>, with a record 20 League titles, 12 FA Cups, five League Cups and a record 21 FA Community Shields. United have also won three UEFA Champions Leagues, one UEFA Europa League, one UEFA Cup Winners' Cup, one UEFA Super Cup, one Intercontinental Cup and one FIFA Club World Cup. In 1998-99, the club became the first in the history of English football to achieve the continental European treble. By winning the UEFA Europa League in 2016-17, they became one of five clubs to have won all three main UEFA club competitions.
+			Manchester United have <a href="trophies.html" id="trophies" style="color:black"><u><b>won more trophies than any other club in English football</b></u></a>, with a record 20 League titles, 12 FA Cups, five League Cups and a record 21 FA Community Shields. United have also won three UEFA Champions Leagues, one UEFA Europa League, one UEFA Cup Winners' Cup, one UEFA Super Cup, one Intercontinental Cup and one FIFA Club World Cup. In 1998-99, the club became the first in the history of English football to achieve the continental European treble. By winning the UEFA Europa League in 2016-17, they became one of five clubs to have won all three main UEFA club competitions.
 		</div>
 	</div>
 	<div style="margin-left: 20px;">
@@ -57,6 +57,16 @@
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		</p>
+
+		<div style="margin-left: 1455px">
+			<input type="button" style="width: 50px" value="night" onclick="
+			if(this.value === 'night') {
+				document.querySelector('body').style.backgroundColor='black'; document.querySelector('body').style.color='white'; document.querySelector('a').style.color='white'; document.getElementById('trophies').style.color='white'; document.getElementById('titles').style.borderRight='solid white'; this.value = 'day'
+			} else {
+				document.querySelector('body').style.backgroundColor='white'; document.querySelector('body').style.color='black'; document.querySelector('a').style.color='black'; document.getElementById('trophies').style.color='black'; document.getElementById('titles').style.borderRight='solid black'; this.value = 'night'
+			}
+			">
+		</div>
 
 		<p>
 			<!--Start of Tawk.to Script-->
