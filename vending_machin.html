@@ -1,0 +1,51 @@
+<html>
+<body>
+	<div style="border-top: solid 2px; width: 400px">
+	</div>
+	<div style="margin-top: 20px">
+		<input id="coffe" type=button value="커피(700원)" style="color: red" onclick="balance(0)">
+		<input id="corn" type=button value="옥수수수염차(1000원)" style="color: red" onclick="balance(1)">
+		<input id="water" type=button value="물(500원)" style="color: red" onclick="balance(2)">
+	</div>
+
+	<div style="margin-top: 20px">
+		<input class="input" type=button value="1000원" onclick="coin=coin+1000; document.getElementById('money').innerText=coin	; check()">
+		<input class="input" type=button value="500원" onclick="coin=coin+500; document.getElementById('money').innerText=coin; check()">
+		<input class="input" type=button value="100원" onclick="coin=coin+100; document.getElementById('money').innerText=coin; check()">
+	</div>
+
+	<div style="margin-top: 20px">
+		현재금액 : <span id="money"></span>원
+	</div>
+</body>
+
+<script>
+	var coin = 0;
+
+	document.getElementById('money').innerText = coin;
+
+	var drink = new Array("coffe", "corn", "water");
+	var price = new Array(700, 1000, 500);
+	var drink_kor = new Array("커피", "옥수수수염차", "물"); 
+
+	function check(){
+		for (var i = drink.length - 1; i >= 0; i--) {
+			if(coin>=price[i]){
+				document.getElementById(drink[i]).style.color='blue';
+			}
+			else {
+				document.getElementById(drink[i]).style.color='red';
+			}
+		}
+	}
+
+	function balance(j){
+		if(coin<price[j]){
+			alert('돈이 부족합니다.')
+		}
+		else {
+			coin=coin-price[j]; document.getElementById('money').innerText=coin; check(); alert(drink_kor[j]+'를(을) 구매했습니다.')
+		}
+	}
+</script>
+</html>
