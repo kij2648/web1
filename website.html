@@ -9,12 +9,8 @@
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCLVC7MGYX"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-FCLVC7MGYX');
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+	<script src="color.js">
 	</script>
 
 </head>
@@ -32,12 +28,12 @@
 	<div id="grid">
 		<div id="titles">
 			<h1 class="title"><a href="index.html" style="color:gray">1. <u>About</u></a></h1>
-			<h1 class="title"><a href="website.html" >2. <u>Official Website</u></a></h1>
+			<h1 class="title"><a href="website.html" id='now'>2. <u>Official Website</u></a></h1>
 			<h1 class="title"><a href="youtube.html" style="color:gray">3. <u>Official Youtube Channel</u></a></h1>
 		</div>
 
 		<div id="article">
-			<a href="https://www.manutd.com" style="color:black; font-size:20"><u> Link </u></a>
+			<a href="https://www.manutd.com" id='link' style="color:black; font-size:20"><u> Link </u></a>
 		</div>
 	</div>
 	<div style="margin-left: 20px;">
@@ -53,6 +49,10 @@
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		</p>
+
+		<div style="margin-left: 1455px">
+			<input type="button" style="width: 50px" value="night" onclick="dayandnight(this)">
+		</div>
 
 		<p>
 			<!--Start of Tawk.to Script-->
