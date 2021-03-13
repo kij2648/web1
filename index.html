@@ -1,4 +1,4 @@
- <title>
+<title>
 	Manchester United
 </title>
 
@@ -9,12 +9,8 @@
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCLVC7MGYX"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-FCLVC7MGYX');
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+	<script src="color.js">
 	</script>
 
 </head>
@@ -31,7 +27,7 @@
 	
 	<div id="grid">
 		<div id="titles">
-			<h1 class="title"><a href="index.html">1. <u>About</u></a></h1>
+			<h1 class="title"><a href="index.html" id="now">1. <u>About</u></a></h1>
 			<h1 class="title"><a href="website.html" style="color:gray">2. <u>Official Website</u></a></h1>
 			<h1 class="title"><a href="youtube.html" style="color:gray">3. <u>Official Youtube Channel</u></a></h1>
 		</div>
@@ -41,7 +37,7 @@
 
 			<br><br>
 
-			Manchester United have <a href="trophies.html" id="trophies" style="color:black"><u><b>won more trophies than any other club in English football</b></u></a>, with a record 20 League titles, 12 FA Cups, five League Cups and a record 21 FA Community Shields. United have also won three UEFA Champions Leagues, one UEFA Europa League, one UEFA Cup Winners' Cup, one UEFA Super Cup, one Intercontinental Cup and one FIFA Club World Cup. In 1998-99, the club became the first in the history of English football to achieve the continental European treble. By winning the UEFA Europa League in 2016-17, they became one of five clubs to have won all three main UEFA club competitions.
+			Manchester United have won more trophies than any other club in English football, with a record 20 League titles, 12 FA Cups, five League Cups and a record 21 FA Community Shields. United have also won three UEFA Champions Leagues, one UEFA Europa League, one UEFA Cup Winners' Cup, one UEFA Super Cup, one Intercontinental Cup and one FIFA Club World Cup. In 1998-99, the club became the first in the history of English football to achieve the continental European treble. By winning the UEFA Europa League in 2016-17, they became one of five clubs to have won all three main UEFA club competitions.
 		</div>
 	</div>
 	<div style="margin-left: 20px;">
@@ -58,14 +54,8 @@
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		</p>
 
-		<div>
-			<input type="button" style="width: 50px" value="night" onclick="
-			if(this.value === 'night') {
-				document.querySelector('body').style.backgroundColor='black'; document.querySelector('body').style.color='white'; document.querySelector('a').style.color='white'; document.getElementById('trophies').style.color='white'; document.getElementById('titles').style.borderRight='solid white'; this.value = 'day'
-			} else {
-				document.querySelector('body').style.backgroundColor='white'; document.querySelector('body').style.color='black'; document.querySelector('a').style.color='black'; document.getElementById('trophies').style.color='black'; document.getElementById('titles').style.borderRight='solid black'; this.value = 'night'
-			}
-			">
+		<div style="margin-left: 1455px">
+			<input type="button" style="width: 50px" value="night" onclick="dayandnight(this)">
 		</div>
 
 		<p>
