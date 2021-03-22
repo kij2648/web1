@@ -80,7 +80,7 @@
 				<div class="graybox" onclick="addNum('0');">
 					0
 				</div>
-				<div class="graybox" style="font-size: 25px" onclick="num='0'; save=0; document.getElementById('number').innerText = num;">
+				<div class="graybox" style="font-size: 25px" onclick="num='0'; save=0; code=NaN; document.getElementById('number').innerText = num;">
 					AC
 				</div>
 				<div class="graybox" onclick="commit(code)">
@@ -97,7 +97,7 @@
 
 	var num="0";
 	var save=0;
-	var code
+	var code=NaN
 
 	document.getElementById('number').innerText = num;
 
