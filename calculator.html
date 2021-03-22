@@ -1,0 +1,185 @@
+<html>
+	<head>
+		<style type="text/css">
+			body{
+				font-family: Helvetica; src: url("Helvetica.tff");
+			}
+			.graybox{
+				width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; background-color: #333333; font-size:35px; border-radius: 50%;
+			}
+			.graybox:hover {
+				background-color: #737373;
+			}
+			.orangebox{
+				width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; background-color: #fe9f06; color: white; font-size: 50px; border-radius: 50%;
+			}
+			.orangebox:hover {
+				background-color: #ffffff; color: #fe9f06;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="margin-top: 20px; width: 400px; height: 540px; border: solid 3px; background-color: black; display: flex; flex-direction:column; justify-content: space-around;">
+			<div style="color:white; margin: 10px; top: 50%; height: 70px; text-align: right; font-size: 60;">
+				<span id="number">0</span>
+			</div>
+
+
+			<div style="display: flex; justify-content: space-around;">
+				<div class="graybox" onclick="addNum('7');">
+					7
+				</div>
+				<div class="graybox" onclick="addNum('8');">
+					8
+				</div>
+				<div class="graybox" onclick="addNum('9');">
+					9
+				</div>
+				<div class="orangebox" onclick="setOpCode('÷')">
+					<div>÷
+					</div>
+				</div>
+			</div>
+
+
+			<div style="display: flex; justify-content: space-around;">
+				<div class="graybox" onclick="addNum('4');">
+					4
+				</div>
+				<div class="graybox" onclick="addNum('5');">
+					5
+				</div>
+				<div class="graybox" onclick="addNum('6');">
+					6
+				</div>
+				<div class="orangebox" onclick="setOpCode('×')">
+					<div>×
+					</div>
+				</div>
+			</div>
+
+
+			<div style="display: flex; justify-content: space-around;">
+				<div class="graybox" onclick="addNum('1');">
+					1
+				</div>
+				<div class="graybox" onclick="addNum('2');">
+					2
+				</div>
+				<div class="graybox" onclick="addNum('3');">
+					3
+				</div>
+				<div class="orangebox" onclick="setOpCode('-')">
+					<div>-
+					</div>
+				</div>
+			</div>
+
+
+			<div style="display: flex; justify-content: space-around;">
+				<div class="graybox" onclick="addNum('0');">
+					0
+				</div>
+				<div class="graybox" style="font-size: 25px" onclick="num='0'; save=0; document.getElementById('number').innerText = num;">
+					AC
+				</div>
+				<div class="graybox" onclick="commit(code)">
+					=
+				</div>
+				<div class="orangebox" onclick="setOpCode('＋')">
+					<div>＋
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+
+	var num="0";
+	var save=0;
+	var code
+
+	document.getElementById('number').innerText = num;
+
+	function addNum(a){
+		if(num==="0"){
+			if(a==="0")
+				num="0";
+			else{
+				num=a;
+			}
+		}
+		else {
+			num = num+a;
+		}
+		 document.getElementById('number').innerText = num;
+	}
+
+	function setOpCode(b) {
+		if(b==="÷"){
+			code="÷";
+			if(save!=0){
+				num=Number(save)/Number(num);
+				document.getElementById('number').innerText = num;
+			}
+			save=num;
+			num="0";
+		} else if (b==="×") {
+			code="×"
+			if(save!=0){
+				num=Number(save)*Number(num);
+				document.getElementById('number').innerText = num;
+			}
+			save=num;
+			num="0";
+		} else if (b==="-") {
+			code="-"
+			if(save!=0){
+				num=Number(save)-Number(num);
+				document.getElementById('number').innerText = num;
+			}
+			save=num;
+			num="0";
+		} else if (b==="＋") {
+			code="＋"
+			if(save!=0){
+				num=Number(save)+Number(num);
+				document.getElementById('number').innerText = num;
+			}
+			save=num;
+			num="0";
+		}
+	}
+
+	function commit(c){
+		if(c==="÷"){
+			num=Number(save)/Number(num);
+			document.getElementById('number').innerText = num;
+			save=num;
+			num="0";
+			code=NaN;
+		} else if (c==="×") {
+			code="×"
+			num=Number(save)*Number(num);
+			document.getElementById('number').innerText = num;
+			save=num;
+			num="0";
+			code=NaN;
+		} else if (c==="-") {
+			code="-"
+			num=Number(save)-Number(num);
+			document.getElementById('number').innerText = num;
+			save=num;
+			num="0";
+			code=NaN;
+		} else if (c==="＋") {
+			code="＋"
+			num=Number(save)+Number(num);
+			document.getElementById('number').innerText = num;
+			save=num;
+			num="0";
+			code=NaN;
+		}
+	}
+	</script>
+</html>
