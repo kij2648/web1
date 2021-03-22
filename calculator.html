@@ -117,35 +117,47 @@
 
 	function setOpCode(b) {
 		if(b==="÷"){
-			code="÷";
 			if(save!=0){
-				num=Number(save)/Number(num);
-				document.getElementById('number').innerText = num;
+				if (code===0) {
+					num=1;
+					num=Number(save)/Number(num);
+					document.getElementById('number').innerText = num;
+				} else {
+					num=Number(save)/Number(num);
+					document.getElementById('number').innerText = num;
+				}
 			}
+			code="÷";
 			save=num;
 			num="0";
 		} else if (b==="×") {
-			code="×"
 			if(save!=0){
-				num=Number(save)*Number(num);
-				document.getElementById('number').innerText = num;
+				if (code===0) {
+					num=1;
+					num=Number(save)*Number(num);
+					document.getElementById('number').innerText = num;
+				} else {
+					num=Number(save)*Number(num);
+					document.getElementById('number').innerText = num;
+				}
 			}
+			code="×"
 			save=num;
 			num="0";
 		} else if (b==="-") {
-			code="-"
 			if(save!=0){
 				num=Number(save)-Number(num);
 				document.getElementById('number').innerText = num;
 			}
+			code="-"
 			save=num;
 			num="0";
 		} else if (b==="＋") {
-			code="＋"
 			if(save!=0){
 				num=Number(save)+Number(num);
 				document.getElementById('number').innerText = num;
 			}
+			code="＋"
 			save=num;
 			num="0";
 		}
@@ -157,28 +169,28 @@
 			document.getElementById('number').innerText = num;
 			save=num;
 			num="0";
-			code=NaN;
+			code=0;
 		} else if (c==="×") {
 			code="×"
 			num=Number(save)*Number(num);
 			document.getElementById('number').innerText = num;
 			save=num;
 			num="0";
-			code=NaN;
+			code=0;
 		} else if (c==="-") {
 			code="-"
 			num=Number(save)-Number(num);
 			document.getElementById('number').innerText = num;
 			save=num;
 			num="0";
-			code=NaN;
+			code=0;
 		} else if (c==="＋") {
 			code="＋"
 			num=Number(save)+Number(num);
 			document.getElementById('number').innerText = num;
 			save=num;
 			num="0";
-			code=NaN;
+			code=0;
 		}
 	}
 	</script>
